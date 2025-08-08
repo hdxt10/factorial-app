@@ -1,14 +1,10 @@
-# Dockerfile
+version: '3.8'
 
-# Use the official Python image from the Docker Hub
-FROM python:3.9-slim
-
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy the Python script into the container
-COPY factorial.py .
-
-# Run the Python script when the container starts
-CMD ["python", "factorial.py"]
+services:
+  factorial-service:
+    build: .
+    container_name: factorial-container
+    ports:
+      - "9999:9999"  # Mapping port 8080 on the host to port 8080 in the container
+    restart: always
 
