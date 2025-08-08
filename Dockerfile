@@ -1,9 +1,14 @@
-# docker-compose.yml
+# Use official lightweight Python image
+FROM python:3.11-slim
 
-version: '3.8'
+# Set working directory inside container
+WORKDIR /factorial
 
-services:
-  factorial-service:
-    build: .
-    container_name: factorial-container
-    restart: always
+# Copy project files
+COPY . .
+
+# Install dependencies (none in this case)
+#RUN pip install --no-cache-dir -r requirements.txt
+
+# Set default command
+CMD ["python", "factorial.py"]
