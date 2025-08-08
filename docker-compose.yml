@@ -4,7 +4,4 @@ services:
   factorial-service:
     build: .
     container_name: factorial-container
-    ports:
-      - "9999:9999"  # Mapping port 8080 on the host to port 8080 in the container
-    restart: always
 
